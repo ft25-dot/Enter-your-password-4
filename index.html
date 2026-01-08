@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Password Check</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .message {
+      margin-top: 20px;
+      font-size: 18px;
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Enter Password</h2>
+
+  <input type="password" id="password" placeholder="Password">
+  <br><br>
+  <button onclick="checkPassword()">Submit</button>
+
+  <div class="message" id="message"></div>
+
+  <script>
+    function checkPassword() {
+      const correctPassword = "FAITHFUL";
+      const userPassword = document.getElementById("password").value;
+      const message = document.getElementById("message");
+
+      if (userPassword === correctPassword) {
+        // go to next page
+        window.location.href = "success.html";
+      } else {
+        message.innerHTML = "❌ Wrong password. Try again.";
+      }
+    }
+  </script>
+
+</body>
+</html>
